@@ -12,6 +12,7 @@ $ npm i rollup-plugin-purifycss -D
 
 ```js
 import { join } from 'path';
+import postcss from 'rollup-plugin-postcss';
 import purifycss from 'rollup-plugin-purifycss';
 
 export default {
@@ -19,6 +20,7 @@ export default {
   dest: join(__dirname, 'bundle.js'),
   format: 'iife',
   plugins: [
+    postcss(),
     purifycss()
   ]
 };
