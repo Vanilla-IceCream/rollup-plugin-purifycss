@@ -9,6 +9,15 @@ export default {
   format: 'iife',
   plugins: [
     postcss(),
-    purifycss()
+    purifycss({
+      content: ['**/example/**/*.js', '**/example/**/*.html'],
+      options: {
+        info: true,
+        rejected: true
+      },
+      callback(result) {
+        console.log(result);
+      }
+    })
   ]
 };

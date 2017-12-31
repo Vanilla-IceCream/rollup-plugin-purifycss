@@ -13,7 +13,7 @@ var index = function(options) {
     transform: function transform(code, id) {
       if (!filter(id)) { return; }
 
-      return purify(code, '', {});
+      return purify(options.content, code, options.options, options.callback);
     }
   };
 };
