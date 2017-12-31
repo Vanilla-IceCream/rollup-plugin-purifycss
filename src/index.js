@@ -11,7 +11,7 @@ export default function(options = {}) {
     transform(code, id) {
       if (!filter(id)) return;
 
-      return purify(code, '', {});
+      return purify(options.content, code, options.options, options.callback);
     }
   };
 }

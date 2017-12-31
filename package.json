@@ -1,6 +1,6 @@
 {
   "name": "rollup-plugin-purifycss",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Tree-shaking JavaScript and CSS with Rollup.",
   "main": "dist/rollup-plugin-purifycss.cjs.js",
   "module": "dist/rollup-plugin-purifycss.es.js",
