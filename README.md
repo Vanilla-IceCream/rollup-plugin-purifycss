@@ -1,11 +1,13 @@
 # rollup-plugin-purifycss
 
-Tree-shaking JavaScript and CSS with Rollup.
+Seamless integration between Rollup and PurifyCSS.
 
 ## Install
 
 ```bash
 $ npm i rollup-plugin-purifycss -D
+# or
+$ yarn add rollup-plugin-purifycss -D
 ```
 
 ## Usage
