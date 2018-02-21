@@ -1,7 +1,7 @@
 import { createFilter } from 'rollup-pluginutils';
 import purify from 'purify-css';
 
-export default function(options = {}) {
+export default (options = {}) => {
   if (!options.include) options.include = '**/*.{css,sss}';
 
   const filter = createFilter(options.include, options.exclude);
@@ -14,4 +14,4 @@ export default function(options = {}) {
       return purify(options.content, code, options.options, options.callback);
     }
   };
-}
+};

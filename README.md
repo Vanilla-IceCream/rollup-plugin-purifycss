@@ -1,4 +1,4 @@
-# rollup-plugin-purifycss
+# rollup-plugin-purifycss [![Build Status](https://travis-ci.org/Vanilla-IceCream/rollup-plugin-purifycss.svg?branch=master)](https://travis-ci.org/Vanilla-IceCream/rollup-plugin-purifycss) [![Coverage Status](https://coveralls.io/repos/github/Vanilla-IceCream/rollup-plugin-purifycss/badge.svg?branch=master)](https://coveralls.io/github/Vanilla-IceCream/rollup-plugin-purifycss?branch=master)
 
 Seamless integration between Rollup and PurifyCSS.
 

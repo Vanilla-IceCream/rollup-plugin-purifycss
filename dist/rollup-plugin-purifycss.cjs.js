@@ -5,7 +5,7 @@ function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'defau
 var rollupPluginutils = require('rollup-pluginutils');
 var purify = _interopDefault(require('purify-css'));
 
-var index = function(options) {
+function index (options) {
   if ( options === void 0 ) options = {};
 
   if (!options.include) { options.include = '**/*.{css,sss}'; }
@@ -20,7 +20,7 @@ var index = function(options) {
       return purify(options.content, code, options.options, options.callback);
     }
   };
-};
+}
 
 module.exports = index;
 //# sourceMappingURL=rollup-plugin-purifycss.cjs.js.map
