@@ -4,11 +4,10 @@ const purifycss = require('../');
 
 export default {
   input: join(__dirname, 'main.js'),
-  dest: join(__dirname, 'bundle.js'),
-  format: 'iife',
+  output: [{ file: join(__dirname, 'bundle.js'), format: 'iife' }],
   plugins: [
     purifycss({
-      content: ['**/*.js', '**/*.html'],
+      content: ['./**/*.js', './**/*.html'],
       options: {
         info: true,
       },
