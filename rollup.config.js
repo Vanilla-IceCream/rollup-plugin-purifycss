@@ -7,9 +7,9 @@ export default {
   input: join(__dirname, 'src/index.js'),
   output: [
     { file: pkg.main, format: 'cjs' },
-    { file: pkg.module, format: 'es' }
+    { file: pkg.module, format: 'esm' },
   ],
   plugins: [buble()],
   external: Object.keys(pkg.dependencies),
-  sourcemap: true
+  sourcemap: true,
 };

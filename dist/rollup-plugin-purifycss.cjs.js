@@ -17,10 +17,22 @@ function index (options) {
     transform: function transform(code, id) {
       if (!filter(id)) { return; }
 
-      return purify(options.content, code, options.options, options.callback);
-    }
+      var purifyPromise = function (_content, _code, _options) {
+        return new Promise(function (resolve) {
+          purify(_content, _code, _options, function (purifiedCSS) {
+            resolve(purifiedCSS);
+          });
+        });
+      };
+
+      return purifyPromise(options.content, code, options.options).then(function (purifiedCSS) {
+        return {
+          code: ("export default " + (JSON.stringify(purifiedCSS))),
+          map: { mappings: '' },
+        };
+      });
+    },
   };
 }
 
 module.exports = index;
-//# sourceMappingURL=rollup-plugin-purifycss.cjs.js.map

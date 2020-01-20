@@ -11,7 +11,20 @@ export default (options = {}) => {
     transform(code, id) {
       if (!filter(id)) return;
 
-      return purify(options.content, code, options.options, options.callback);
-    }
+      const purifyPromise = (_content, _code, _options) => {
+        return new Promise(resolve => {
+          purify(_content, _code, _options, purifiedCSS => {
+            resolve(purifiedCSS);
+          });
+        });
+      };
+
+      return purifyPromise(options.content, code, options.options).then(purifiedCSS => {
+        return {
+          code: `export default ${JSON.stringify(purifiedCSS)}`,
+          map: { mappings: '' },
+        };
+      });
+    },
   };
 };
