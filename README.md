@@ -14,25 +14,19 @@ $ yarn add rollup-plugin-purifycss -D
 
 ```js
 import { join } from 'path';
-import postcss from 'rollup-plugin-postcss';
 import purifycss from 'rollup-plugin-purifycss';
 
 export default {
-  entry: join(__dirname, 'main.js'),
+  input: join(__dirname, 'main.js'),
   dest: join(__dirname, 'bundle.js'),
   format: 'iife',
   plugins: [
-    postcss(),
     purifycss({
-      content: ['**/src/**/*.js', '**/src/**/*.html'],
+      content: ['**/*.js', '**/*.html'],
       options: {
         info: true,
-        rejected: true
       },
-      callback(result) {
-        console.log(result);
-      }
-    })
-  ]
+    }),
+  ],
 };
 ```

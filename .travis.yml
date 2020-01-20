@@ -1,17 +1,14 @@
-os: linux
-dist: trusty
-sudo: required
-
 language: node_js
-node_js: stable
-cache: yarn
+node_js:
+  - "node"
+  - "lts/*"
 
-branches:
-  only: master
+install: true
 
-script: npm test
+cache:
+  yarn: true
+  directories: node_modules
 
-notifications:
-  email:
-    on_success: change
-    on_failure: change
+before_script: yarn install
+script: yarn test
+after_success: yarn coverage
