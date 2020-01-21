@@ -6,7 +6,6 @@ export default (options = {}) => {
   if (!options.include) options.include = '**/*.{css,sss}';
 
   const filter = createFilter(options.include, options.exclude);
-  const buildID = 'purifycss';
   const styles = [];
 
   return {
